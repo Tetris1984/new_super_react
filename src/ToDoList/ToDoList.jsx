@@ -119,7 +119,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch => ({
   setAllTodos: tasks => {
-    dispatch(getAllTodo(tasks))
+    return getAllTodo(tasks)
   },
 
   createNewTodo: task => {
