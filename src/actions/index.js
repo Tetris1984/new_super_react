@@ -1,16 +1,15 @@
 export const getAllTodo = (tasks) => {
-  console.log('asd');
-  return dispatch => {
-    console.log('dispatch', dispatch);
-  const prom = new Promise(resolve => resolve());
-
-    return prom.than(()=>{
-      dispatch({
-        type: 'GET_TODOS',
-        payload: tasks
-      });
-    })
-  }
+  return dispatch =>
+    fetch("http://valeriy.com:3005/")
+    .then(res => res.json())
+    .then(
+      (result) => {
+        dispatch({
+          type: 'GET_TODOS',
+          payload: result
+        });
+      }
+    )
 };
 
 export const createNewTodo = (task) => {

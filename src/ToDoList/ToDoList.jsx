@@ -12,16 +12,7 @@ class ToDoList extends Component {
     };
 
     componentDidMount() {
-
-      fetch("http://valeriy.com:3005/")
-        .then(res => res.json())
-        .then(
-          (result) => {
-            // console.log("AAASSSDD", result)
-            this.props.setAllTodos(result);
-            // this.props.todos.allTask.tasks(result)
-          }
-          )
+      this.props.setAllTodos();
     }
 
   handleTaskCreate = (newTask) => {
@@ -119,7 +110,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch => ({
   setAllTodos: tasks => {
-    return getAllTodo(tasks)
+    return dispatch(getAllTodo(tasks));
   },
 
   createNewTodo: task => {
