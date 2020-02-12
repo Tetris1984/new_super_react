@@ -1,0 +1,19 @@
+.body{
+    background: yellow;
+}
+input:focus {
+    /*background-color:red;*/
+}
+
+input:disabled {
+    /*background-color:blue;*/
+}
+
+.select {
+    background-color:blue;
+}
+.loading {}
+.item {
+    background: red;
+}
+.icon {}
